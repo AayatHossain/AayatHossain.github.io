@@ -1,0 +1,19 @@
+#newList{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#newList li {
+    display: flex; 
+    margin: 10px;
+}
+
+#div1{
+    display: flex;
+    justify-content: center;
+}
+
+#div2{
+    display: flex;
+    justify-content: center;
+}
