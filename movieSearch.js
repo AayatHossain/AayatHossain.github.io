@@ -19,8 +19,39 @@ const showMovie = (results) => {
        if(result.show.image){
         const listItem = document.createElement("li")
         const image = document.createElement('IMG')
+
+        const title = document.createElement('p')
+        title.innerText = `Title: ${result.show.name}`
+
+        const lang = document.createElement('p')
+        lang.innerText = `Language: ${result.show.language}`
+
+        const rate = document.createElement('p')
+        rate.innerText = `Rating: ${result.show.rating.average}`
+
+        
+        const b1 = document.createElement('button')
+        b1.textContent = "Watch Now"
+        b1.addEventListener("click", ()=>{
+            window.open(result.show.url)
+        })
+
+
+
+
+
         image.src = result.show.image.medium
         listItem.appendChild(image)
+        listItem.appendChild(title)
+        listItem.appendChild(lang)
+        listItem.appendChild(rate)
+        listItem.appendChild(b1)
+
+        listItem.setAttribute("class", "card")
+        title.setAttribute("class", "detailsTittle")
+        lang.setAttribute("class", "details")
+        rate.setAttribute("class", "details")
+        b1.setAttribute("class", "btn")
         newList.appendChild(listItem)
        } 
     }
